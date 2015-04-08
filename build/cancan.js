@@ -149,7 +149,7 @@ var Ability = (function () {
           // all attributes match
           var attrsMatch = true;
 
-          if (rule.attrs) {
+          if (actionMatches && targetMatches && rule.attrs) {
             // check if there is a function
             // that executes custom validation
             if ("function" === typeof rule.attrs) {

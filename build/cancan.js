@@ -28,6 +28,7 @@ var CanCan = (function () {
   _prototypeProperties(CanCan, {
     can: {
       value: function can(user, action, target) {
+        console.log("CANNNNNNNNNNNNNN");
         var ability = new this.Ability();
         ability.configure(user);
 
@@ -47,7 +48,10 @@ var CanCan = (function () {
     },
     authorize: {
       value: function authorize() {
+        console.log("CALLING AUTH!!!!!!!!!");
         var isAllowed = this.can.apply(this, arguments);
+
+        console.log("is allowed", isAllowed);
 
         if (!isAllowed) {
           var err = new Error("Not authorized.");
